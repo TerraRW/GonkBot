@@ -22,12 +22,31 @@ async def on_message(message):
         readings = [
             'Gonk Gonk (True)',
             'Gonk Gonk (Mostly True)',
+            'Gonk Gonk (Mostly Harmless)',
+            'Gonk Gonk (You are not the Father)',
             'Gonk Gonk (Not getting involved in this...)',
             'Gonk Gonk (Mostly False)',
             'Gonk Gonk (False)'
         ]
+        gonks = [
+            'Gonk Gonk',
+            'GONK GONK!',
+            'gonk gonk',
+            'gOnK gOnK',
+            'gonk GONK!',
+            'GONK! gonk',
+            '𝕘𝕠𝕟𝕜 𝕘𝕠𝕟𝕜',
+            '𝓰𝓸𝓷𝓴 𝓰𝓸𝓷𝓴',
+            'ʞuoɓ ʞuoɓ',
+            '01100111 01101111 01101110 01101011',
 
-        response = random.choice(readings)
+            'g̵̛̮͈̫̟͈͛̓̈́̄ð̸̨̼͚̜͙̅̅́͋͠ñ̶̟̼͍̺̝̾͒̀̊͝k̶̡̛͚̩̭̱̿̐̈̋ ̸̗̞͓̲̪͋͒́̃͆g̴͇͓̞̫͇̽̔̋̾̈́ð̴̧̣̮̯̟́̏̈́̊̋ṇ̶͓͖͈̃̑̌̀̈́̎͜k̸͖̱̫̠̿͋̋͐̚ͅ',
+
+        ]
+        response = random.choice(gonks)
+        if '?' in message.content:
+            response = random.choice(readings)
+
         await message.channel.send(response)
 
 client.run(TOKEN)
